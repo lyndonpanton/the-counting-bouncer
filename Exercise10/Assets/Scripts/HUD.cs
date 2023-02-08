@@ -25,7 +25,7 @@ public class HUD : MonoBehaviour
         
     }
 
-    void AddBounce()
+    public void AddBounce()
     {
         bounceCount++;
         //bounceText.text[bounceTextPrefix.Length] = bounceCount.ToString();
