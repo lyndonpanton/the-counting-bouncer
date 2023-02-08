@@ -10,6 +10,13 @@ public class Bouncer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Vector3 localScale  = transform.localScale;
+
+        localScale.x *= 5;
+        localScale.y *= 5;
+
+        transform.localScale = localScale;
+
         rb2d = GetComponent<Rigidbody2D>();
 
         float horizontalForce = Random.Range(15.0f, 25.0f);
