@@ -7,6 +7,9 @@ public class Bouncer : MonoBehaviour
     // stores the rb2d unity component
     Rigidbody2D rb2d;
 
+    // stores the audio source unity component
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,8 @@ public class Bouncer : MonoBehaviour
         localScale.y *= 5;
 
         transform.localScale = localScale;
+
+        audioSource = GetComponent<AudioSource>();
 
         rb2d = GetComponent<Rigidbody2D>();
 
@@ -52,6 +57,8 @@ public class Bouncer : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        audioSource.Play();
+
         HUD hud = GameObject.FindGameObjectsWithTag("HUD")[0].GetComponent<HUD>();
         hud.AddBounce();
     }
